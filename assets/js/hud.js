@@ -19,6 +19,19 @@ class Gud {
         this.draw()
     }
 
+    addScore(playerId) {
+        const id = playerId===1 ? 0 : 1;
+
+        this.parent.players[id].score++;
+
+        if(id===0){
+            this.score1.update(String(this.parent.players[id].score));
+        }else if(id===1) {
+            this.score2.update(String(this.parent.players[id].score));
+        }
+        this.draw();
+    }
+
     draw() {
         this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
 
