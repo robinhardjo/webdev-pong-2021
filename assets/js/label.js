@@ -102,32 +102,25 @@ Label.getArray2D = function (str) {
       array[index] = a.concat(b).concat(c);
       index = ++index === 5 ? 0 : index;
     }
-    return array;
   }
-  Label.getRectangles = function (
-    array2D,
-    pivotX,
-    pivotY,
-    width,
-    height,
-    color
-  ) {
-    let rects = [];
-    for (let y = 0; y < array2D.length; y++) {
-      for (let x = 0; x < array2D[y].length; x++) {
-        if (array2D[y][x]) {
-          rects.push(
-            new Rectangle(
-              pivotX + width / 2 + x * width,
-              pivotY + height / 2 + y * height,
-              width,
-              height,
-              color
-            )
-          );
-        }
+  return array;
+};
+Label.getRectangles = function (array2D, pivotX, pivotY, width, height, color) {
+  let rects = [];
+  for (let y = 0; y < array2D.length; y++) {
+    for (let x = 0; x < array2D[y].length; x++) {
+      if (array2D[y][x]) {
+        rects.push(
+          new Rectangle(
+            pivotX + width / 2 + x * width,
+            pivotY + height / 2 + y * height,
+            width,
+            height,
+            color
+          )
+        );
       }
     }
-    return rects;
-  };
+  }
+  return rects;
 };
