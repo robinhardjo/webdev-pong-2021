@@ -23,5 +23,5 @@ canvas#pong {
 
 canvas#hud {
     z-index: 1;
-    background: green;
+    background: rgb(0, 140, 255);
 }

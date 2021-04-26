@@ -8,6 +8,8 @@ class Ball extends Rectangle{
         this.angle = 0;
         this.locked = false;
         this.out = false;
+        this.velocity.x = 150;
+        this.velocity.y = 20;
     }
 
 }
