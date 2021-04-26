@@ -1,4 +1,4 @@
-class Gud {
+class Hud {
     constructor(game) {
         this.parent = game;
         this.canvas = document.getElementById('hud');
