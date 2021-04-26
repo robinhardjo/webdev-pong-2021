@@ -4,7 +4,7 @@ class Game {
     this.canvas = document.getElementById("pong");
     this.context = this.canvas.getContext("2d");
 
-    // ball object aanmaken
+    // ball object aanmaken.
     this.ball = new Ball(
       this.canvas.width / 2,
       this.canvas.height / 2,
@@ -22,6 +22,7 @@ class Game {
 
     //Maakt array voor de toetsen aan.
     this.keys = [];
+
     //Vangt event op voor toets ingedrukt.
     window.addEventListener("KEY_DOWN", (event) => {
       console.log(event.detail);
@@ -177,6 +178,7 @@ class Game {
             player.velocity.y < 0 && player.velocity.y < ball.velocity.y
               ? player.velocity.y * 1.1
               : -ball.velocity.y;
+            
           // Check of de botsing van onderaf was.
         } else if (ball.position.y > player.position.y) {
           console.log("botsing aan de onderkant van speler gedetecteerd");
@@ -187,6 +189,7 @@ class Game {
               : -ball.velocity.y;
         }
       }
+      
       //check of de bal uit gaat.
       if (ball.right < 0 || ball.left > this.canvas.width) {
         this.hud.addScore(player.id === 1 ? 2 : 1);
